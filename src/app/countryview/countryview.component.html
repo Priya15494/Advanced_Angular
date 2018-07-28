@@ -1,0 +1,98 @@
+<div class="container">
+     <div class="row" *ngIf='countrydetails'>
+                 <div id="cover" class="col-12 col-sm-12 col-md-12 coverHeight">
+                    <img src="{{countrydetails[0].flag}}" class="img-fluid profileHeight"/>
+                 </div>
+
+                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <p><strong style="font-size:150%;color: orangered"><i>{{countrydetails[0].name | uppercase}}-</i></strong>
+                     A Country of {{countrydetails[0].subregion}} in {{countrydetails[0].region}} region.
+                     People from this country are called as <strong>{{countrydetails[0].demonym}}'s.</strong>
+                    </p>
+                  </div>
+
+                 <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+                    <p><strong style="color: darkgreen;text-align:center ;font-size:1.5em;">Basic Information-</strong></p>
+                    <p><strong style="color:darkslategray"><i>Capital-</i></strong>{{countrydetails[0].capital}}</p>
+                    <p><strong style="color:darkslategray"><i>Population-</i></strong>{{countrydetails[0].population}}</p>
+                    <p><strong style="color:darkslategray"><i>Nativename-</i></strong>{{countrydetails[0].nativeName}}</p>
+                    <p *ngIf="countrydetails[0].languages.length!=undefined && countrydetails[0].languages.length>0">
+                        <strong style="color:darkslategray"><i>Languages:</i></strong> 
+                        <span *ngFor="let language of countrydetails[0].languages;let first=first;let last=last">
+                        <a [routerLink]="['/languageview',language.iso639_1]">{{language.name}}</a>--{{language.nativeName}}(Script){{last ? '' : ','}}</span>
+                    </p>
+                    <p *ngIf="countrydetails[0].altSpellings.length!=undefined && countrydetails[0].altSpellings.length>0">
+                            <strong style="color:darkslategray"><i>Alias names:</i></strong> 
+                            <span *ngFor="let alias of countrydetails[0].altSpellings;let first=first;let last=last">
+                                {{alias}}{{last ? '' : ','}}</span>
+                    </p>
+
+                 </div>
+
+                 <div class="col-12 col-md-6 col-lg-6 col-sm-6 ">
+                    <p><strong style="color: darkgreen;text-align: center;font-size:1.5em;">Geographical Information-</strong></p>
+                    <p *ngIf="countrydetails[0].latlng.length!=undefined && countrydetails[0].latlng.length>0">
+                        <strong style="color:darkslategray"><i>Latitude&Longitude:</i></strong>
+                        {{countrydetails[0].latlng[0]}} Lat,{{countrydetails[0].latlng[1]}} Long
+                    </p>
+                    <p><strong style="color:darkslategray"><i>Area :</i></strong>{{countrydetails[0].area}} KMS</p>
+                    <p><strong style="color:darkslategray"><i>gini :</i></strong>{{countrydetails[0].gini}}</p>
+                    <p *ngIf="countrydetails[0].borders.length!=undefined && countrydetails[0].borders.length>0">
+                        <strong style="color:darkslategray"><i>Borders of this country -</i> </strong> <span *ngFor="let border of countrydetails[0].borders;let first=first;let last=last">{{border}}{{last ? '' : ','}}</span>
+                    </p>
+                 </div>
+                   
+                  <div class="myimage col-12 col-md-6 col-sm-6 ">
+                        <p style="color: orangered; font-size: 1.25em"><strong>Time Zones-</strong></p>
+                        <img src="assets/images/clock.jpg">          
+                  </div>
+
+                 <div class="col-md-6 col-sm-6 col-12">
+                   <br>
+                    <p *ngIf="countrydetails[0].timezones.length!=undefined && countrydetails[0].timezones.length>0">
+                        <strong style="color:darkslategray">time ZONE's- </strong> <span *ngFor="let time of countrydetails[0].timezones;let first=first;let last=last">{{time}}{{last ? '' : ','}}</span>
+                    </p>
+                    <p><strong style="color:darkslategray">Callingcode :</strong>{{countrydetails[0].callingCodes[0]}} </p>
+                    <p><strong style="color:darkslategray">NumericCode :</strong>{{countrydetails[0].numericCode}} </p>
+                </div>
+                <br>
+                <div class="col-12">
+                    <p><strong style="color: darkgreen;text-align:center ;font-size:1.25em;">Regional Blocs-</strong></p>
+                    <p *ngIf="countrydetails[0].regionalBlocs.length!=undefined && countrydetails[0].regionalBlocs.length>0">
+                     <span *ngFor="let bloc of countrydetails[0].regionalBlocs;let first=first;let last=last">
+                         Acronym- {{bloc.acronym}},&nbsp;Name- {{bloc.name}},&nbsp;
+                         OtherNames-
+                         <span *ngFor="let names of bloc.otherNames;let first=first;let last=last">
+                             {{names}}{{last ? '' : ','}}</span>
+                      {{last ? '' : ','}}</span>
+                    </p>
+                </div>
+
+                <div class="col-12">
+                   <p>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        See Translations
+                    </button>
+                  </p>
+                  <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+                           <p><strong style="color:brown">de:</strong>{{countrydetails[0].translations.de}}</p>
+                           <p><strong style="color:brown">es:</strong>{{countrydetails[0].translations.es}}</p>
+                           <p><strong style="color:brown">fr:</strong>{{countrydetails[0].translations.fr}}</p>
+                           <p><strong style="color:brown">ja:</strong>{{countrydetails[0].translations.ja}}</p>
+                           <p><strong style="color:brown">it:</strong>{{countrydetails[0].translations.it}}</p>
+                           <p><strong style="color:brown">pt:</strong>{{countrydetails[0].translations.pt}}</p>
+                           <p><strong style="color:brown">hr:</strong>{{countrydetails[0].translations.hr}}</p>
+                           <p><strong style="color:brown">fa:</strong>{{countrydetails[0].translations.fa}}</p>
+                        </div>
+                 </div>
+
+
+                </div>
+
+           
+
+                 
+
+    </div>
+</div>

@@ -1,0 +1,21 @@
+h3{
+    margin-left: 2%;
+    color: red;
+    margin-left: 30%;
+}
+.card{
+   
+    height: 93%;
+    margin-left: 4%;  
+    margin-top: 2%;
+}
+
+.card-img-top {
+    
+    height: 10vw;
+    object-fit: cover;
+}
+
+.container{
+    width: 100%;
+}

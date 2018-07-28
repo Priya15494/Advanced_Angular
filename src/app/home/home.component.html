@@ -1,0 +1,32 @@
+
+<div class="container">
+  <div class="row"> 
+      <div class="myimage col-md-4 col-sm-6 col-6">
+          <img src="assets/images/ASIA.jpg">     
+          <p><a [routerLink]="['/view']" [queryParams]="{ region: 'Asia'}"><strong>ASIA</strong></a></p>
+      </div>
+      <div class="myimage col-md-4 col-sm-6 col-6"> 
+        <img src="assets/images/regions.jpg">
+      </div>
+      <div class="myimage col-md-4 col-sm-6 col-6">
+          <img src="assets/images/Africa.jpg">
+          <p><a [routerLink]="['/view']" [queryParams]="{ region: 'Africa'}"><strong>AFRICA</strong></a></p>
+      </div>
+      <div class="myimage col-md-4 col-sm-6 col-6">
+          <img src="assets/images/AUSTRALIA.jpg">
+        <p><a [routerLink]="['/view']" [queryParams]="{ region: 'Oceania'}"><strong>OCEANIA</strong></a></p>
+      </div>
+      <div class="myimage  col-md-4 col-sm-6 col-6">
+        <img src="assets/images/America.jpg">
+        <p><a [routerLink]="['/view']" [queryParams]="{ region: 'Americas'}"><strong>AMERICA'S</strong></a></p>       
+     </div>
+     <div class="myimage col-md-4 col-sm-6 col-6">
+        <img src="assets/images/Europe.png">
+        <p><a [routerLink]="['/view']" [queryParams]="{ region: 'Europe'}"><strong>Europe</strong></a></p>
+     </div>
+
+    </div>
+  </div>
+  <br/>
+  <router-outlet></router-outlet>
+

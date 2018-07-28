@@ -1,0 +1,23 @@
+.container{
+    width:100%;
+}
+.coverHeight {
+    max-height: 300px;
+    width: 640px;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat; 
+}
+
+.profileHeight {
+    border: 0.5vw solid blue;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px silver;
+}
+
+.myimage img{
+    margin-top: 3%;
+    margin-left: 5%;
+    width: 25vw;
+    height: 15vh;
+}

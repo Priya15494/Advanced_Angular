@@ -1,0 +1,15 @@
+
+.myimage img{
+    margin-top: 12%;
+    margin-left: 5%;
+    width: 23vw;
+    height: 26vh;
+}
+p{
+    margin-left: 10%;
+    color: #FF0000;
+}
+
+.container{
+    width: 100%;
+}

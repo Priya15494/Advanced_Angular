@@ -1,0 +1,25 @@
+<div class="container">
+<div class="row" *ngIf='lang_country_details'>
+    <div class="col-12 col-md-12 col-sm-12">
+      <h3>List of Countries with languagecode-<strong>{{languagecode}}</strong></h3>
+    </div>
+  
+    <div *ngFor="let country of lang_country_details"  class="col-md-4 col-sm-4 col-12">
+      <div class="card border-danger">
+        <img class="card-img-top" src="{{country.flag}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{country.name}}</h5>
+          <p *ngIf="country.currencies.length>0" class="card-text">
+            <strong>Currency-</strong> 
+              <span *ngFor="let currency of country.currencies;let first=first;let last=last">
+                <a *ngIf="currency.code!=null" [routerLink]="['/currencyview',currency.code]">{{currency.name}}</a>
+                   {{last ? '' : ','}}
+               </span>
+          </p>
+          <a [routerLink]="['/countryview',country.name]"  class="btn btn-primary">View Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
