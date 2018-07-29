@@ -24,11 +24,11 @@
             ],
             "styles": [
               "src/styles.css",
-              "../advance-assignment/node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "../Advanced_Angular/node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
-              "../advance-assignment/node_modules/jquery/dist/jquery.min.js",
-              "../advance-assignment/node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "../Advanced_Angular/node_modules/jquery/dist/jquery.min.js",
+              "../Advanced_Angular/node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {
